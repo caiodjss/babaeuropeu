@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Simples</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="profile">
+    <a href="index.html">
+    <img src="./assets/avatar.png" alt="Logo Legado Baba Europeu 2018" /></a>
+    <p>@babaeuropeu</p>
+</div>
+
+<div id="switch" onclick="toggleMode()">
+    <button></button>
+    <span></span>
+</div>
+
+  <div id="login-wrapper">
+    <div class="login-container formulario-login">
+      <h2>Login</h2>
+      <form action="#" method="POST">
+        <label for="username">Nome de usuário</label>
+        <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário" required>
+    
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+    
+        <button type="submit" class="login-btn">Entrar</button>
+      </form>
+      <a href="#" onclick="mostrarTexto()">Esqueci a senha</a>
+    </div>
+    
+    <div id="saida"></div>
+  </div>
+
+  <footer>
+    <p class="copyright">&copy; Feito com 💚 pela <a href="https://caiodjss.github.io/bratso/" target="_blank">Brátso</a></p>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
