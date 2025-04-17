@@ -1,5 +1,5 @@
 {
-  // editor
+  // Configurações do Editor
   "editor.wordWrap": "on",
   "editor.fontSize": 14,
   "editor.lineHeight": 30,
@@ -10,28 +10,63 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "files.autoSave": "afterDelay",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
 
-  // explorer
+  // Explorer
   "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
 
-  // workbench
+  // Workbench
   "workbench.editor.enablePreview": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Omni",
+  "workbench.startupEditor": "none",
 
-  // prettier
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // Prettier (formatação)
   "prettier.enable": true,
   "prettier.singleQuote": false,
   "prettier.tabWidth": 2,
   "prettier.semi": false,
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
-  // terminal
+  // Terminal
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.profiles.windows": {
     "Git Bash": {
-      "source": "Git Bash"
+      "source": "Git Bash",
+      "path": "C:\\Program Files\\Git\\bin\\bash.exe"
+    },
+    "Command Prompt": {
+      "path": "cmd.exe"
     }
   },
-  "terminal.integrated.defaultProfile.windows": "Git Bash"
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+
+  // Extensões úteis para seu projeto
+  "extensions.ignoreRecommendations": false,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+
+  // Configurações específicas para Live Server
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.root": "/",
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.port": 5500,
+
+  // Configurações para GitHub Pages
+  "git.ignoreMissingGitWarning": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+
+  // JavaScript/TypeScript
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.implicitProjectConfig.checkJs": true
 }
