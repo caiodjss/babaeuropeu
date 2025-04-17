@@ -4,40 +4,59 @@
     <meta charset="UTF-8">
     <title>Redirecionando...</title>
     <script>
-        // Verifica se estamos no GitHub Pages
+        // Configurações do repositório
+        const repoName = 'babaeuropeu'; // Nome do seu repositório
         const isGitHubPages = window.location.hostname.includes('github.io');
         
-        // Caminho base diferente para local vs GitHub Pages
+        // Caminhos base
         const basePath = isGitHubPages 
-            ? '/caiodjss.github.io/babaeuropeu/src/pages/home.html' // 👈 Substitua pelo nome do seu repositório
-            : '/';
+            ? `/${repoName}/`  // GitHub Pages
+            : '/';             // Desenvolvimento local
         
-        // Redirecionamento inteligente
+        // Caminho completo para a home
+        const homePath = `${basePath}src/pages/home.html`;
+        
+        // Função de redirecionamento
         const redirect = () => {
-            const targetUrl = basePath + 'babaeuropeu/src/pages/home.html';
-            
-            // Tenta acessar o arquivo primeiro
-            fetch(targetUrl)
+            // Verifica se o arquivo existe
+            fetch(homePath)
                 .then(response => {
                     if (response.ok) {
-                        window.location.href = targetUrl;
+                        window.location.href = homePath;
                     } else {
-                        showError();
+                        throw new Error('Página não encontrada');
                     }
                 })
-                .catch(showError);
+                .catch(error => {
+                    console.error('Erro:', error);
+                    showError();
+                });
         };
         
+        // Mostra mensagem de erro
         const showError = () => {
             document.body.innerHTML = `
+                <style>
+                    body { 
+                        font-family: Arial, sans-serif; 
+                        max-width: 600px; 
+                        margin: 0 auto; 
+                        padding: 20px;
+                        text-align: center;
+                    }
+                    a { color: #0366d6; }
+                </style>
                 <h1>Erro de Redirecionamento</h1>
                 <p>Não foi possível carregar a página inicial.</p>
-                <p><a href="${basePath}src/pages/home.html">Tente manualmente</a></p>
-                <p>Se estiver no GitHub Pages, verifique se:</p>
-                <ul>
-                    <li>O nome do repositório está correto no código</li>
-                    <li>A opção "GitHub Pages" está configurada para publicar da branch main</li>
+                <p><strong>Caminho tentado:</strong> ${homePath}</p>
+                <p><a href="${homePath}">Tente manualmente</a></p>
+                <h3>Verificações necessárias:</h3>
+                <ul style="text-align: left;">
+                    <li>O arquivo <strong>src/pages/home.html</strong> existe no repositório</li>
+                    <li>No GitHub: Settings > Pages > Source está configurado para <strong>main branch</strong></li>
+                    <li>O nome do repositório está correto no código (atual: '${repoName}')</li>
                 </ul>
+                <p><a href="https://github.com/caiodjss/${repoName}/settings/pages" target="_blank">Configurar GitHub Pages</a></p>
             `;
         };
         
