@@ -87,7 +87,3 @@ Registro de um novo convidado para um evento.
 3. Faça suas alterações e commit: `git commit -am 'Adicionando minha nova feature'`.
 4. Envie a branch para o seu fork: `git push origin minha-nova-feature`.
 5. Crie um pull request.
-
-## 📫 Contato
-
-Desenvolvido por [Seu Nome](https://github.com/seu-usuario).
