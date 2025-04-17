@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Página Inicial</h1>
+    <div id="content">Conteúdo será carregado aqui...</div>
+  
+    <script>
+      function carregarHome() {
+        fetch('src/pages/home.html')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Erro ao carregar a página: ' + response.status);
+            }
+            return response.text();
+          })
+          .then(html => {
+            document.getElementById('content').innerHTML = html;
+          })
+          .catch(error => {
+            console.error(error);
+            document.getElementById('content').innerHTML = '<p>Erro ao carregar a página.</p>';
+          });
+      }
+      window.onload = carregarHome;
+    </script>
+</body>
+</html>
