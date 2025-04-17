@@ -2,15 +2,18 @@ function toggleMode() {
   const html = document.documentElement;
   html.classList.toggle("light");
 
+  // Detecta se está no GitHub Pages
+  const isGitHubPages = window.location.hostname.includes('github.io');
+  const basePath = isGitHubPages ? '/babaeuropeu' : '';
+  
   const img = document.querySelector("#profile img");
 
   if (html.classList.contains("light")) {
-    img.setAttribute("src", "/src/assets/avatar-light.png");
+    img.setAttribute("src", `${basePath}/src/assets/avatar-light.png`);
   } else {
-    img.setAttribute("src", "/src/assets/avatar.png");
+    img.setAttribute("src", `${basePath}/src/assets/avatar.png`);
   }
 }
-
 
 function mostrarTexto() {
   const container = document.querySelector(".login-container");
