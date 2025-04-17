@@ -9,12 +9,12 @@
         
         // Caminho base diferente para local vs GitHub Pages
         const basePath = isGitHubPages 
-            ? '/https://caiodjss.github.io/babaeuropeu/src/pages/home.html' // 👈 Substitua pelo nome do seu repositório
+            ? '/caiodjss.github.io/babaeuropeu/src/pages/home.html' // 👈 Substitua pelo nome do seu repositório
             : '/';
         
         // Redirecionamento inteligente
         const redirect = () => {
-            const targetUrl = basePath + 'src/pages/home.html';
+            const targetUrl = basePath + 'babaeuropeu/src/pages/home.html';
             
             // Tenta acessar o arquivo primeiro
             fetch(targetUrl)
