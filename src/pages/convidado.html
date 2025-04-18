@@ -68,7 +68,7 @@
 
     <script>
         // Função para carregar o arquivo atletas.txt
-        fetch('atletas.txt')
+        fetch('../../atletas.txt')
             .then(response => response.text())
             .then(data => {
                 const atletas = data.split('\n').map(function(line) {
