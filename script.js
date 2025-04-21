@@ -2,7 +2,6 @@ function toggleMode() {
   const html = document.documentElement;
   html.classList.toggle("light");
 
-  // Detecta se está no GitHub Pages
   const isGitHubPages = window.location.hostname.includes('github.io');
   const basePath = isGitHubPages ? '/babaeuropeu' : '';
   
@@ -40,7 +39,7 @@ function mostrarTexto() {
 
 function voltarLogin() {
   const container = document.querySelector(".login-container");
-  if (container) container.innerHTML = "";  // Limpa o conteúdo atual
+  if (container) container.innerHTML = ""; 
   
   const loginHtml = `
     <h2>Login</h2>
