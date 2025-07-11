@@ -79,11 +79,3 @@ Retorna a lista de eventos.
 ### POST /api/convidados
 
 Registro de um novo convidado para um evento.
-
-## 🛠️ Como Contribuir
-
-1. Faça um fork deste repositório.
-2. Crie uma nova branch: `git checkout -b minha-nova-feature`.
-3. Faça suas alterações e commit: `git commit -am 'Adicionando minha nova feature'`.
-4. Envie a branch para o seu fork: `git push origin minha-nova-feature`.
-5. Crie um pull request.
